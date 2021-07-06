@@ -1,4 +1,4 @@
-export const SideMenu = [
+export const MenuItems = [
     {
         name: "map overview",
         url: "/mapoverview",
@@ -22,5 +22,13 @@ export const SideMenu = [
     {
         name: "admin previleges",
         url: "/adminprevileges",
+    },
+    {
+        name: "help",
+        url: "/help",
+    },
+    {
+        name: "log in",
+        url: "/loglanding",
     },
 ];

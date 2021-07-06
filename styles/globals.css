@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav__item {
+  @apply list-none text-gray-700 h-full mx-auto p-3 cursor-pointer font-bold uppercase hover:shadow-md hover:bg-yellow-400 hover:text-white ease-in-out;
+}
+
+.danger {
+  @apply border border-solid hover:border-red-400 hover:shadow-md;
+}
+
+.warning {
+  @apply border border-solid hover:border-yellow-400 hover:shadow-md;
+}
+
+.normal {
+  @apply border border-solid hover:border-green-400 hover:shadow-md;
+}

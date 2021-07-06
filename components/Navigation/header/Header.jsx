@@ -1,11 +1,11 @@
-import { NavBar } from '../exports';
+import { NavBar } from '../navigation';
 
 const Header = (props) => {
 
     const { openDrawer, setOpenDrawer, handleOpenDrawer } = props;
 
     return (
-        <div>
+        <div className="bg-white">
             <NavBar
                 openDrawer={openDrawer}
                 setOpenDrawer={setOpenDrawer}

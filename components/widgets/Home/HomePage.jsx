@@ -11,7 +11,7 @@ const HomePage = () => {
                     <h1 className="uppercase text-start text-blue-700 font-bold text-lg">Statistics</h1>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                     <ReportCard
                         reportTitle="Statistical data and plot"
                         reportDescription="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ratione exercitationem inventore fuga recusandae, natus aut? Id rerum neque molestiae nisi? Aspernatur numquam quis quisquam doloremque vitae maiores voluptas modi!
@@ -37,7 +37,7 @@ const HomePage = () => {
                 <div className="mb-3">
                     <h1 className="uppercase text-start text-blue-700 font-bold text-lg">Recent Reports</h1>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                     <ReportCard
                         reportTitle="Report Number One"
                         reportDescription="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ratione exercitationem inventore fuga recusandae, natus aut? Id rerum neque molestiae nisi? Aspernatur numquam quis quisquam doloremque vitae maiores voluptas modi!

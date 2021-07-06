@@ -2,11 +2,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const ReportCard = (props) => {
-    const { reportTitle, reportDescription, reportImage, reportAuthor } = props;
+
+    const { reportTitle, reportDescription, reportImage, reportAuthor, danger, warning, normal } = props;
+
     return (
         <div>
-            <div className="bg-white cursor-pointer border border-solid border-gray-200 p-4 hover:shadow-md flex flex-col justify-between items-center">
-                <div className="image">
+            <div
+                className={
+                    warning ?
+                        "warning bg-white cursor-pointer border border-solid border-gray-200 p-4 hover:shadow-md flex flex-col justify-between items-center" :
+                        "bg-white cursor-pointer border border-solid border-gray-200 p-4 hover:shadow-md flex flex-col justify-between items-center"
+                            | danger ?
+                            "danger bg-white cursor-pointer border border-solid border-gray-200 p-4 hover:shadow-md flex flex-col justify-between items-center" :
+                            "bg-white cursor-pointer border border-solid border-gray-200 p-4 hover:shadow-md flex flex-col justify-between items-center"
+                                | normal ?
+                                "normal bg-white cursor-pointer border border-solid border-gray-200 p-4 hover:shadow-md flex flex-col justify-between items-center" :
+                                "bg-white cursor-pointer border border-solid border-gray-200 p-4 hover:shadow-md flex flex-col justify-between items-center"
+                }
+            >
+                <div className="bg-white">
                     <Image src={reportImage} height={200} width={200} alt="default graphics" />
                 </div>
                 <div>
@@ -16,7 +30,7 @@ const ReportCard = (props) => {
                         </h1>
                     </div>
                     <div>
-                        <div className=" border-b-4 border-solid border-yellow-400 my-2 w-20 mx-auto"></div>
+                        <div className="border-b-4 border-solid border-yellow-400 my-2 w-20 mx-auto"></div>
                         <p className="text-justify text-black font-normal">
                             {reportDescription}
                         </p>

@@ -4,8 +4,8 @@ import { useState } from "react";
 const Footer = () => {
     const [mode, setMode] = useState("auto");
     return (
-        <div className="pt-12 z-0">
-            <footer id="footer" className="relative z-0 dark:bg-gray-900 pt-24 ">
+        <div className="pt-4">
+            <footer className="relative z-40 dark:bg-gray-900">
                 <div className="border-t border-b border-gray-200 dark:border-gray-700 py-16">
                     <div className="max-w-screen-lg mx-auto px-4 xl:px-12 2xl:px-4">
                         <div className="lg:flex">
@@ -18,7 +18,7 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li className="mt-6">
-                                            <Link href="javascript:void(0)">
+                                            <Link href="/">
                                                 <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Templates</a>
                                             </Link>
                                         </li>
@@ -50,7 +50,7 @@ const Footer = () => {
                                         </li>
 
                                         <li className="mt-6">
-                                            <Link href="javascript:void(0)">
+                                            <Link href="/">
                                                 <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Blog</a>
                                             </Link>
                                         </li>

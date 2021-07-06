@@ -15,12 +15,12 @@ const Operators = () => {
                 <meta name="description" content="The admin panel of the geofinmaps application for mtn ghana" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="w-full h-full">
+            <main className="bg-white">
                 <div className="mt-3 px-4">
                     <h1 className="uppercase text-start text-blue-700 font-bold text-lg">Operators Online</h1>
                 </div>
                 <div className=" bg-white flex justify-evenly items-center">
-                    <div className="">
+                    <div className="bg-white">
                         {
                             OperatorsData.map(item => (
                                 <div key={item.id}>

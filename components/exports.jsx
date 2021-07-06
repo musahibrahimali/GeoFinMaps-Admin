@@ -1,12 +1,12 @@
 /* layout */
 export { default as Layout } from './layout/Layout';
 
-/* header section */
-export { default as NavBar } from './header/navbar/NavBar';
-export { default as Header } from './header/Header';
-
-/* side bar */
-export { default as SideBar } from './SideBar/SideBar';
+/* navigation */
+export {
+    NavBar,
+    Header,
+    SideBar,
+} from './Navigation/navigation';
 
 /* widgets */
 export {

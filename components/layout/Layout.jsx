@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header, Footer, SideBar } from '../exports';
 
 const Layout = (props) => {
@@ -10,10 +10,20 @@ const Layout = (props) => {
         event.preventDefault();
         setOpenDrawer(!openDrawer);
     }
+    /* 
+        const hideOpenDrawer = (event) => {
+            if (window.innerWidth <= 960) {
+                setButton(false);
+            }
+        }
+    
+        window.addEventListener('resize', hideOpenDrawer);
+    
+        useEffect(() => { hideOpenDrawer() }, []); */
 
     return (
         <div>
-            <div className="bg-white h-auto w-screen shadow-md sticky z-40 top-0">
+            <div className="h-full w-screen z-50 shadow-md sticky top-0">
                 <Header
                     openDrawer={openDrawer}
                     setOpenDrawer={setOpenDrawer}
@@ -21,14 +31,14 @@ const Layout = (props) => {
                 />
             </div>
             <div className="max-w-screen-lg mx-auto flex flex-row overflow-auto">
-                <div className="z-50">
+                <div className=" bg-white">
                     <SideBar
                         openDrawer={openDrawer}
                         setOpenDrawer={setOpenDrawer}
                         handleOpenDrawer={handleOpenDrawer}
                     />
                 </div>
-                <div className="z-0">
+                <div className="bg-white mx-4">
                     {children}
                 </div>
             </div>
