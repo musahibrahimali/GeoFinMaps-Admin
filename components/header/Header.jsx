@@ -2,14 +2,14 @@ import { NavBar } from '../exports';
 
 const Header = (props) => {
 
-    const { isSideBar, setIsSideBar, handleSideBarActive } = props;
+    const { openDrawer, setOpenDrawer, handleOpenDrawer } = props;
 
     return (
         <div>
             <NavBar
-                isSideBar={isSideBar}
-                setIsSideBar={setIsSideBar}
-                handleSideBarActive={handleSideBarActive}
+                openDrawer={openDrawer}
+                setOpenDrawer={setOpenDrawer}
+                handleOpenDrawer={handleOpenDrawer}
             />
         </div>
     );

@@ -1,30 +1,26 @@
 export const SideMenu = [
     {
         name: "map overview",
-        url: "/",
+        url: "/mapoverview",
     },
     {
         name: "Add or update data",
-        url: "/",
+        url: "/addcable",
     },
     {
         name: "reports",
-        url: "/",
+        url: "/reports",
     },
     {
         name: "operators",
-        url: "/",
+        url: "/operators",
     },
     {
         name: "active operators",
-        url: "/",
-    },
-    {
-        name: "active operators",
-        url: "/",
+        url: "/liveoperators",
     },
     {
         name: "admin previleges",
-        url: "/",
+        url: "/adminprevileges",
     },
 ];

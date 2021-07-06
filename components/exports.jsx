@@ -8,11 +8,15 @@ export { default as Header } from './header/Header';
 /* side bar */
 export { default as SideBar } from './SideBar/SideBar';
 
-/* body */
-export { default as Body } from './Body/Body';
-
 /* widgets */
-export { default as ReportCard } from './Report/ReportCard';
+export {
+    ReportCard,
+    HomePage,
+    Map,
+    MapWrapper,
+    GoogleMapView,
+    OperatorCard,
+} from './widgets/widgets';
 
 /* footer */
 export { default as Footer } from './Footer/Footer';

@@ -5,7 +5,7 @@ const ReportCard = (props) => {
     const { reportTitle, reportDescription, reportImage, reportAuthor } = props;
     return (
         <div>
-            <div className="bg-gray-50 p-4 shadow-md flex flex-col justify-between items-center">
+            <div className="bg-white cursor-pointer border border-solid border-gray-200 p-4 hover:shadow-md flex flex-col justify-between items-center">
                 <div className="image">
                     <Image src={reportImage} height={200} width={200} alt="default graphics" />
                 </div>
