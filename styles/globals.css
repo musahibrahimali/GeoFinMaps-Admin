@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav__item {
-  @apply list-none text-gray-700 h-full mx-auto p-3 cursor-pointer font-bold uppercase hover:shadow-md hover:bg-yellow-400 hover:text-white ease-in-out;
-}
-
+/* subtle details */
 .danger {
   @apply border border-solid hover:border-red-400 hover:shadow-md;
 }
@@ -17,3 +14,62 @@
 .normal {
   @apply border border-solid hover:border-green-400 hover:shadow-md;
 }
+
+.custom__shadow {
+  @apply shadow-md transition-all duration-300;
+}
+
+.custom__divider{
+  @apply border-b border-solid border-gray-300 transition-all duration-150;
+}
+
+
+.headings{
+  @apply uppercase md:text-left md:text-2xl lg:text-4xl text-center text-blue-700 font-bold text-xl;
+}
+
+.admin__text{
+  @apply text-justify text-lg md:text-xl lg:text-2xl font-normal text-gray-500;
+}
+
+/* end subtle details */
+
+/* side bar */
+.sidenav__item {
+  @apply list-none text-gray-700 text-left h-full mx-auto p-3 cursor-pointer font-bold uppercase hover:shadow-md hover:bg-yellow-400 hover:text-white ease-in-out;
+}
+
+.sidenav__list{
+  @apply flex flex-col items-center justify-center w-full h-full;
+}
+
+/* end side bar */
+
+/* navbar */
+.brand__logo{
+  @apply text-black text-center text-lg uppercase font-extrabold tracking-wider;
+}
+
+.main__navbar{
+  @apply max-w-screen-lg mx-auto p-4 md:p-0 flex flex-row items-center justify-between;
+}
+
+.nav__list{
+  @apply flex flex-row items-center justify-between h-full text-center;
+}
+
+.navlist__container{
+  @apply md:flex flex-row items-center mr-2 md:mr-2 justify-between hidden;
+}
+.dropdown__list__option{
+  @apply relative list-none p-4 cursor-pointer font-bold capitalize hover:bg-yellow-400 hover:text-white;
+}
+
+.navbar__item{
+  @apply list-none p-4 cursor-pointer font-bold capitalize hover:bg-yellow-400 hover:text-white;
+}
+
+/* end navbar */
+
+
+

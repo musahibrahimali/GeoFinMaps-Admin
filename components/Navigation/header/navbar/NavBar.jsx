@@ -19,48 +19,48 @@ const NavBar = (props) => {
     const { handleOpenDrawer } = props;
 
     return (
-        <nav className="max-w-screen-lg mx-auto p-4 md:p-0 flex flex-row items-center justify-between">
+        <nav className="main__navbar navbar_t">
             <div className="flex flex-row items-center justify-between ml-2 md:ml-2 ">
                 <div className="cursor-pointer">
-                    <h1 className="text-black text-center text-lg uppercase font-extrabold tracking-wider">
+                    <h1 className="brand__logo">
                         <Link href="/">
                             <a>geofinmaps</a>
                         </Link>
                     </h1>
                 </div>
             </div>
-            <div className="md:flex flex-row items-center mr-2 md:mr-2 justify-between hidden">
-                <ul className="flex flex-row items-center justify-between h-full text-center">
-                    <Link href="#" >
-                        <a>
-                            <li
-                                className=" relative list-none p-4 cursor-pointer font-bold capitalize hover:bg-yellow-400 hover:text-white"
-                                onMouseEnter={handleOnMouseEnter}
-                                onMouseLeave={handleOnMouseLeave}
-                            >
+            <div className="navlist__container">
+                <ul className="nav__list">
+                    <li
+                        className="dropdown__list__option"
+                        onMouseEnter={handleOnMouseEnter}
+                        onMouseLeave={handleOnMouseLeave}
+                    >
+                        <Link href="#" >
+                            <a>
                                 options
                                 <div className="absolute -left-full mx-auto mt-4 mr-4">
                                     {
                                         mouseEnter && <DropDown />
                                     }
                                 </div>
-                            </li>
-                        </a>
-                    </Link>
-                    <Link href="/help">
-                        <a>
-                            <li className="list-none p-4 cursor-pointer font-bold capitalize hover:bg-yellow-400 hover:text-white">
+                            </a>
+                        </Link>
+                    </li>
+                    <li className="navbar__item">
+                        <Link href="/help">
+                            <a>
                                 help
-                            </li>
-                        </a>
-                    </Link>
-                    <Link href="/loglanding">
-                        <a>
-                            <li className="list-none p-4 cursor-pointer font-bold capitalize hover:bg-yellow-400 hover:text-white">
+                            </a>
+                        </Link>
+                    </li>
+                    <li className="navbar__item">
+                        <Link href="/loglanding">
+                            <a>
                                 Log In
-                            </li>
-                        </a>
-                    </Link>
+                            </a>
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <div className="flex flex-end md:hidden">

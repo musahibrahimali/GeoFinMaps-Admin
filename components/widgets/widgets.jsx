@@ -1,5 +1,4 @@
 export { default as ReportCard } from './Report/ReportCard';
-export { default as HomePage } from './Home/HomePage';
 
 /* map */
 export { default as Map } from './GoogleMap/Map/Map';

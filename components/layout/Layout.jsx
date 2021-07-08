@@ -6,24 +6,60 @@ const Layout = (props) => {
 
     const [openDrawer, setOpenDrawer] = useState(false);
 
-    const handleOpenDrawer = (event) => {
-        event.preventDefault();
+    // open the side bar (drawer logic)
+    const handleOpenDrawer = () => {
         setOpenDrawer(!openDrawer);
     }
-    /* 
-        const hideOpenDrawer = (event) => {
+
+    // remove event listener from the  window
+    const removeEventListener = () => {
+        if (typeof window !== 'undefined') {
+            return window.removeEventListener("resize", handleHideMenu);
+        }
+    };
+
+    /// hiding the sidebar on large screens (during resizing)
+    const handleHideMenu = () => {
+        if (typeof window !== 'undefined') {
             if (window.innerWidth <= 960) {
-                setButton(false);
+                window.removeEventListener("resize", removeEventListener);
+            } else {
+                setOpenDrawer(false);
             }
         }
-    
-        window.addEventListener('resize', hideOpenDrawer);
-    
-        useEffect(() => { hideOpenDrawer() }, []); */
+    }
+
+    /// this function handles adding shaddow to the header upon scrolling
+    const handleScroll = () => {
+        if (typeof window !== 'undefined') {
+            const header = document.querySelector(".header");
+            const nav = document.querySelector(".navbar_t");
+            const headerOffsetTop = header.offsetHeight + 20;
+            const headerScrollTop = header.offsetTop;
+            if (headerScrollTop >= headerOffsetTop) {
+                header.classList.add("custom__shadow");
+                nav.classList.remove("custom__divider");
+            } else {
+                nav.classList.add("custom__divider");
+                header.classList.remove("custom__shadow");
+            }
+        }
+    }
+
+    // on component mount (when it is rendered in the browser)
+    useEffect(() => {
+        // hide sidebar on screen sizes larger than mobile devices
+        window.addEventListener('resize', handleHideMenu);
+
+        /// add shaddow to header on scroll
+        window.addEventListener('scroll', handleScroll);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div>
-            <div className="h-full w-screen z-50 shadow-md sticky top-0">
+            <div className="h-full w-screen header z-50 sticky top-0">
                 <Header
                     openDrawer={openDrawer}
                     setOpenDrawer={setOpenDrawer}
@@ -38,7 +74,7 @@ const Layout = (props) => {
                         handleOpenDrawer={handleOpenDrawer}
                     />
                 </div>
-                <div className="bg-white mx-4">
+                <div className="bg-white">
                     {children}
                 </div>
             </div>

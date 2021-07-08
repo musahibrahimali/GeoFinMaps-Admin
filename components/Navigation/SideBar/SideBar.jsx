@@ -57,7 +57,7 @@ const SideBar = (props) => {
                                     <div className="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
                                         <div className="p-4 sm:px-6 cursor-pointer" onMouseDown={handleOpenDrawer}>
                                             <Dialog.Title className="text-lg text-gray-900 uppercase font-extrabold tracking-wider">
-                                                <Link href="/">
+                                                <Link href="#">
                                                     <a>geofinmaps</a>
                                                 </Link>
                                             </Dialog.Title>

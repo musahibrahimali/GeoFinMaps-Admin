@@ -1,4 +1,6 @@
 /* Image exports */
+
+/* svg */
 export { default as Image1 } from './images/svg-1.svg';
 export { default as Image2 } from './images/svg-2.svg';
 export { default as Image3 } from './images/svg-3.svg';
@@ -14,3 +16,8 @@ export { default as Image12 } from './images/svg-12.svg';
 export { default as Image13 } from './images/svg-13.svg';
 export { default as Image14 } from './images/svg-14.svg';
 export { default as loginImage } from './images/login.svg';
+
+/* jpg, jpeg, png */
+export { default as userIcon } from './images/user_icon.png';
+export { default as profileImage } from './images/profile.jpg';
+export { default as bannerImage } from './images/banner-image.png';

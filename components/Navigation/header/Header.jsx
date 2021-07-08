@@ -4,14 +4,16 @@ const Header = (props) => {
 
     const { openDrawer, setOpenDrawer, handleOpenDrawer } = props;
 
+
+
     return (
-        <div className="bg-white">
+        <header className="bg-white">
             <NavBar
                 openDrawer={openDrawer}
                 setOpenDrawer={setOpenDrawer}
                 handleOpenDrawer={handleOpenDrawer}
             />
-        </div>
+        </header>
     );
 }
 

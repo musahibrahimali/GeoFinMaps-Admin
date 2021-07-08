@@ -17,7 +17,7 @@ export const MenuItems = [
     },
     {
         name: "active operators",
-        url: "/liveoperators",
+        url: "/operators/liveoperators",
     },
     {
         name: "admin previleges",

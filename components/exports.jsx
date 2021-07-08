@@ -11,7 +11,6 @@ export {
 /* widgets */
 export {
     ReportCard,
-    HomePage,
     Map,
     MapWrapper,
     GoogleMapView,
