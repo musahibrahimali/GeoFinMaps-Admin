@@ -74,12 +74,8 @@ const Layout = (props) => {
                         handleOpenDrawer={handleOpenDrawer}
                     />
                 </div>
-                <div
-                    className="bg-white dark:bg-gray-900"
-                >
-                    <div
-                        className="max-w-screen-lg mx-auto flex flex-row overflow-auto"
-                    >
+                <div className="bg-white dark:bg-gray-900">
+                    <div className="max-w-screen-lg mx-auto flex flex-row overflow-auto">
                         <div className=" bg-white dark:bg-gray-900">
                             <SideBar
                                 openDrawer={openDrawer}
@@ -87,7 +83,7 @@ const Layout = (props) => {
                                 handleOpenDrawer={handleOpenDrawer}
                             />
                         </div>
-                        <div className="bg-white dark:bg-gray-900">
+                        <div className="bg-white dark:bg-gray-900 flex flex-col">
                             {children}
                         </div>
                     </div>

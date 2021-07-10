@@ -16,6 +16,8 @@ export { default as Image12 } from './images/svg-12.svg';
 export { default as Image13 } from './images/svg-13.svg';
 export { default as Image14 } from './images/svg-14.svg';
 export { default as loginImage } from './images/login.svg';
+export { default as NotFoundImage } from './images/404.svg';
+export { default as UploadImage } from './images/uploadImage.svg';
 
 /* jpg, jpeg, png */
 export { default as userIcon } from './images/user_icon.png';

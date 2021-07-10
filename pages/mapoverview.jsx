@@ -14,8 +14,8 @@ const MapOverview = () => {
                 <meta name="description" content="The admin panel of the geofinmaps application for mtn ghana" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="bg-white">
-                <GoogleMapView />
+            <main className="h-full w-full bg-white dark:bg-gray-900">
+
             </main>
         </>
     );

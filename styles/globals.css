@@ -82,4 +82,9 @@
   @apply text-xs lg:text-sm leading-none text-gray-700 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400;
 }
 
+.has-mask {
+		position: absolute;
+		clip: rect(10px, 150px, 130px, 10px);
+	}
+
 
