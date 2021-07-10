@@ -34,12 +34,12 @@ const Reports = (props) => {
                 <meta name="description" content="The admin panel of the geofinmaps application for mtn ghana" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="bg-white z-0">
+            <main className="bg-white dark:bg-gray-900 z-0">
                 <div className="mt-3 px-4 mb-4">
                     <h1 className="headings">Reports</h1>
                 </div>
-                <div className=" bg-white flex justify-evenly items-center">
-                    <div className="bg-white grid md:grid-cols-2 gap-4">
+                <div className=" bg-white dark:bg-gray-900 flex justify-evenly items-center">
+                    <div className="bg-white dark:bg-gray-900 grid md:grid-cols-2 gap-4">
                         {
                             reports.map(item => {
                                 if (item.reportType === 1) {

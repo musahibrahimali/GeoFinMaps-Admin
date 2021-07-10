@@ -36,15 +36,15 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-white h-full w-full">
-        <div className="bg-white h-full py-3 flex flex-col">
+      <main className="bg-white dark:bg-gray-900 h-full w-full">
+        <div className="bg-white dark:bg-gray-900 h-full py-3 flex flex-col">
           {/* statistics */}
           <div className="mb-3">
             <div className="mb-3">
               <h1 className="headings">Statistics</h1>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 bg-white dark:bg-gray-900">
               <ReportCard
                 url={"/reports/1"}
                 reportTitle="Statistical data and plot"
@@ -68,11 +68,11 @@ export default function Home(props) {
           </div>
 
           {/* reports */}
-          <div className="mb-3">
+          <div className="mb-3 bg-white dark:bg-gray-900">
             <div className="mb-3">
               <h1 className="headings">Recent Reports</h1>
             </div>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 bg-white dark:bg-gray-900">
               {
                 reports.map(item => {
                   if (item.reportType === 1) {

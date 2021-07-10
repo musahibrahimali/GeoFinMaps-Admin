@@ -20,7 +20,7 @@ const NavBar = (props) => {
 
     return (
         <nav className="main__navbar navbar_t">
-            <div className="flex flex-row items-center justify-between ml-2 md:ml-2 ">
+            <div className="flex flex-row items-center justify-between">
                 <div className="cursor-pointer">
                     <h1 className="brand__logo">
                         <Link href="/">
@@ -47,7 +47,7 @@ const NavBar = (props) => {
                             </a>
                         </Link>
                     </li>
-                    <li className="navbar__item">
+                    <li className="navbar__item text-gray-800 dark:text-gray-200">
                         <Link href="/help">
                             <a>
                                 help
@@ -65,7 +65,7 @@ const NavBar = (props) => {
             </div>
             <div className="flex flex-end md:hidden">
                 <div className="cursor-pointer mr-4" onMouseDown={handleOpenDrawer}>
-                    <MenuIcon className="h-8 w-8" aria-hidden="true" />
+                    <MenuIcon className="h-8 w-8 text-gray-800 dark:text-gray-50" aria-hidden="true" />
                 </div>
             </div>
         </nav>

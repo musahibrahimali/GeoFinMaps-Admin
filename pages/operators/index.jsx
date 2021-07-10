@@ -29,12 +29,12 @@ const Operators = (props) => {
                 <meta name="description" content="The admin panel of the geofinmaps application for mtn ghana" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="bg-white">
+            <main className="bg-white dark:bg-gray-900">
                 <div className="mt-3 px-4">
-                    <h1 className="headings">Operators Online</h1>
+                    <h1 className="headings">Operators</h1>
                 </div>
-                <div className=" bg-white flex justify-evenly items-center">
-                    <div className="bg-white">
+                <div className=" bg-white dark:bg-gray-900 flex justify-evenly items-center">
+                    <div className="bg-white dark:bg-gray-900">
                         {
                             operators.map(item => (
                                 <div key={item.id}>

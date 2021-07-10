@@ -3,9 +3,11 @@ import { MenuItems } from '../navigation';
 
 const DropDown = () => {
     return (
-        <div className="bg-white w-96 custom__shadow mx-4 py-2 flex justify-center items-center">
-            <div className="w-full max-w-md">
-                <ul className="sidenav__list">
+        <div
+            className="bg-white dark:bg-gray-900 w-96 custom__shadow mx-4 py-2 flex justify-center items-center border border-solid border-gray-300 dark:border-gray-600"
+        >
+            <div className="w-full max-w-md bg-white dark:bg-gray-900">
+                <ul className="sidenav__list bg-white dark:bg-gray-900">
                     {
                         MenuItems.map((item, index) => {
                             return (

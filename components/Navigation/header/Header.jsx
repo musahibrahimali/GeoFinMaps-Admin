@@ -7,7 +7,7 @@ const Header = (props) => {
 
 
     return (
-        <header className="bg-white">
+        <header className="bg-white dark:bg-gray-900">
             <NavBar
                 openDrawer={openDrawer}
                 setOpenDrawer={setOpenDrawer}

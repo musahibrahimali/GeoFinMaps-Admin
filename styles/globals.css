@@ -4,50 +4,57 @@
 
 /* subtle details */
 .danger {
-  @apply border border-solid hover:border-red-400 hover:shadow-md;
+  @apply border border-solid hover:border-red-400 hover:shadow-md dark:hover:border-red-500;
 }
 
 .warning {
-  @apply border border-solid hover:border-yellow-400 hover:shadow-md;
+  @apply border border-solid hover:border-yellow-400 hover:shadow-md dark:hover:border-yellow-500;
 }
 
 .normal {
-  @apply border border-solid hover:border-green-400 hover:shadow-md;
+  @apply border border-solid hover:border-green-400 hover:shadow-md dark:hover:border-green-500;
 }
 
 .custom__shadow {
-  @apply shadow-md transition-all duration-300;
+  @apply shadow-md transition-all ease-in-out duration-300;
 }
 
 .custom__divider{
-  @apply border-b border-solid border-gray-300 transition-all duration-150;
+  @apply border-b border-solid border-gray-200 dark:border-gray-600 transition-all ease-in-out duration-150;
 }
 
+.profile__card__option{
+  @apply text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-200 font-bold uppercase rounded-l px-4 py-2 bg-white dark:bg-gray-900 shadow-sm w-2/6;
+}
+
+.profile__card__detail{
+  @apply px-4 border-l-2 text-left bg-white dark:bg-gray-900 text-base md:text-lg lg:text-xl text-gray-500 dark:text-gray-100 uppercase font-bold cursor-default border-gray-400 dark:border-gray-600 focus:outline-none  rounded-md rounded-l-none shadow-sm -ml-1 w-4/6;
+}
 
 .headings{
-  @apply uppercase md:text-left md:text-2xl lg:text-4xl text-center text-blue-700 font-bold text-xl;
+  @apply uppercase md:text-left md:text-2xl ml-4 lg:text-4xl text-center text-blue-700 dark:text-gray-200 font-bold text-xl;
 }
 
 .admin__text{
-  @apply text-justify text-lg md:text-xl lg:text-2xl font-normal text-gray-500;
+  @apply text-justify text-lg md:text-xl lg:text-2xl font-normal text-gray-700 dark:text-gray-200;
 }
 
 /* end subtle details */
 
 /* side bar */
 .sidenav__item {
-  @apply list-none text-gray-700 text-left h-full mx-auto p-3 cursor-pointer font-bold uppercase hover:shadow-md hover:bg-yellow-400 hover:text-white ease-in-out;
+  @apply list-none text-gray-800 dark:text-gray-100 text-left h-full mx-auto p-3 cursor-pointer font-bold uppercase hover:shadow-md hover:bg-yellow-400 hover:text-white ease-in-out;
 }
 
 .sidenav__list{
-  @apply flex flex-col items-center justify-center w-full h-full;
+  @apply flex flex-col items-center bg-white dark:bg-gray-900 justify-center w-full h-full;
 }
 
 /* end side bar */
 
 /* navbar */
 .brand__logo{
-  @apply text-black text-center text-lg uppercase font-extrabold tracking-wider;
+  @apply text-gray-800 dark:text-gray-100 text-center text-lg uppercase font-extrabold tracking-wider;
 }
 
 .main__navbar{
@@ -59,17 +66,20 @@
 }
 
 .navlist__container{
-  @apply md:flex flex-row items-center mr-2 md:mr-2 justify-between hidden;
+  @apply md:flex flex-row m-0 bg-white dark:bg-gray-900 items-center justify-between hidden;
 }
 .dropdown__list__option{
-  @apply relative list-none p-4 cursor-pointer font-bold capitalize hover:bg-yellow-400 hover:text-white;
+  @apply relative list-none text-gray-800 dark:text-gray-200 p-4 cursor-pointer font-bold capitalize hover:bg-yellow-400 hover:text-gray-100;
 }
 
 .navbar__item{
-  @apply list-none p-4 cursor-pointer font-bold capitalize hover:bg-yellow-400 hover:text-white;
+  @apply list-none py-4 px-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 cursor-pointer font-bold capitalize hover:bg-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-gray-100 hover:text-gray-100;
 }
 
 /* end navbar */
 
+.footer__item{
+  @apply text-xs lg:text-sm leading-none text-gray-700 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-400;
+}
 
 

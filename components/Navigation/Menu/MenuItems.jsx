@@ -1,6 +1,6 @@
 export const MenuItems = [
     {
-        name: "map overview",
+        name: "map",
         url: "/mapoverview",
     },
     {

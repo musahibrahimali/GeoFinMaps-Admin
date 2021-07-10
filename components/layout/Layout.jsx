@@ -5,6 +5,11 @@ const Layout = (props) => {
     const { children } = props;
 
     const [openDrawer, setOpenDrawer] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
+
+    const handleTheme = () => {
+        setDarkMode(!darkMode);
+    }
 
     // open the side bar (drawer logic)
     const handleOpenDrawer = () => {
@@ -58,27 +63,41 @@ const Layout = (props) => {
     }, []);
 
     return (
-        <div>
-            <div className="h-full w-screen header z-50 sticky top-0">
-                <Header
-                    openDrawer={openDrawer}
-                    setOpenDrawer={setOpenDrawer}
-                    handleOpenDrawer={handleOpenDrawer}
-                />
-            </div>
-            <div className="max-w-screen-lg mx-auto flex flex-row overflow-auto">
-                <div className=" bg-white">
-                    <SideBar
+        <div className={darkMode ? "dark" : ""}>
+            <div className="bg-white dark:bg-gray-900">
+                <div
+                    className="h-full w-screen bg-white dark:bg-gray-900 header z-50 sticky top-0"
+                >
+                    <Header
                         openDrawer={openDrawer}
                         setOpenDrawer={setOpenDrawer}
                         handleOpenDrawer={handleOpenDrawer}
                     />
                 </div>
-                <div className="bg-white">
-                    {children}
+                <div
+                    className="bg-white dark:bg-gray-900"
+                >
+                    <div
+                        className="max-w-screen-lg mx-auto flex flex-row overflow-auto"
+                    >
+                        <div className=" bg-white dark:bg-gray-900">
+                            <SideBar
+                                openDrawer={openDrawer}
+                                setOpenDrawer={setOpenDrawer}
+                                handleOpenDrawer={handleOpenDrawer}
+                            />
+                        </div>
+                        <div className="bg-white dark:bg-gray-900">
+                            {children}
+                        </div>
+                    </div>
                 </div>
+                <Footer
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                    handleTheme={handleTheme}
+                />
             </div>
-            <Footer />
         </div>
     );
 }

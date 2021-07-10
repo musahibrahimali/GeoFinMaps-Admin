@@ -1,159 +1,160 @@
 import Link from "next/link";
-import { useState } from "react";
 
-const Footer = () => {
-    const [mode, setMode] = useState("auto");
+const Footer = (props) => {
+
+    const { darkMode, handleTheme } = props;
+
     return (
-        <div className="pt-4">
-            <footer className="relative z-40 dark:bg-gray-900">
-                <div className="border-t border-b border-gray-200 dark:border-gray-700 py-16">
-                    <div className="max-w-screen-lg mx-auto px-4 xl:px-12 2xl:px-4">
-                        <div className="lg:flex">
-                            <div className="w-full lg:w-1/2 mb-16 lg:mb-0 flex">
-                                <div className="w-full lg:w-1/2 px-6">
-                                    <ul>
-                                        <li>
+        <div className="pt-2 bg-white dark:bg-gray-900">
+            <footer className="relative z-40 p-4 bg-white dark:bg-gray-900">
+                <div
+                    className="bg-white dark:bg-gray-900 border-t border-b border-gray-200 dark:border-gray-700 py-16"
+                >
+                    <div className="dark:bg-gray-900 bg-white max-w-screen-lg mx-auto px-4 xl:px-12 2xl:px-4">
+                        <div className="lg:flex dark:bg-gray-900 bg-white">
+                            <div className="w-full lg:w-1/2 mb-16 lg:mb-0 flex dark:bg-gray-900 bg-white">
+                                <div className="w-full lg:w-1/2 px-6 dark:bg-gray-900 bg-white">
+                                    <ul className="bg-white dark:bg-gray-900">
+                                        <li className="bg-white dark:bg-gray-900">
                                             <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Components</a>
+                                                <a className="footer__item" >
+                                                    Home
+                                                </a>
                                             </Link>
                                         </li>
-                                        <li className="mt-6">
-                                            <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Templates</a>
+                                        <li className="mt-6 dark:bg-gray-900 bg-white">
+                                            <Link href="/mapoverview">
+                                                <a className="footer__item">
+                                                    Map Overview
+                                                </a>
                                             </Link>
                                         </li>
-                                        <li className="mt-6">
-                                            <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Pricing</a>
+                                        <li className="mt-6 dark:bg-gray-900 bg-white">
+                                            <Link href="/operators">
+                                                <a className="footer__item">
+                                                    operators
+                                                </a>
                                             </Link>
                                         </li>
-                                        <li className="mt-6">
-                                            <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">FAQ</a>
-                                            </Link>
-                                        </li>
-                                        <li className="mt-6">
-                                            <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">
-                                                    Documentation
+                                        <li className="mt-6 dark:bg-gray-900 bg-white">
+                                            <Link href="/help">
+                                                <a className="footer__item">
+                                                    Help
                                                 </a>
                                             </Link>
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="w-full lg:w-1/2 px-6">
-                                    <ul>
-                                        <li>
-                                            <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Free components</a>
+                                <div className="dark:bg-gray-900 bg-white w-full lg:w-1/2 px-6">
+                                    <ul className="bg-white dark:bg-gray-900">
+                                        <li className="bg-white dark:bg-gray-900">
+                                            <Link href="/adminprevileges">
+                                                <a className="footer__item">
+                                                    Admin
+                                                </a>
                                             </Link>
                                         </li>
 
-                                        <li className="mt-6">
-                                            <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Blog</a>
+                                        <li className="mt-6 dark:bg-gray-900 bg-white">
+                                            <Link href="/reports">
+                                                <a className="footer__item">
+                                                    Reports
+                                                </a>
                                             </Link>
                                         </li>
-                                        <li className="mt-6">
-                                            <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Changelog</a>
+                                        <li className="mt-6 dark:bg-gray-900 bg-white">
+                                            <Link href="/addcable">
+                                                <a className="footer__item">
+                                                    Add Data
+                                                </a>
                                             </Link>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div className="w-full lg:w-1/2 flex">
-                                <div className="w-full lg:w-1/2 px-6">
-                                    <ul>
+                            <div className="w-full lg:w-1/2 flex dark:bg-gray-900 bg-white">
+                                <div className="w-full lg:w-1/2 px-6 dark:bg-gray-900 bg-white">
+                                    <ul className="bg-white dark:bg-gray-900">
                                         <li>
                                             <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">
+                                                <a className="footer__item"
+                                                >
                                                     Privacy policy
                                                 </a>
                                             </Link>
                                         </li>
-                                        <li className="mt-6">
+                                        <li className="mt-6 dark:bg-gray-900 bg-white">
                                             <Link href="/">
-                                                <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Terms of service</a>
+                                                <a className="footer__item">
+                                                    Terms of service
+                                                </a>
                                             </Link>
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="w-full lg:w-1/2 px-6 flex flex-col justify-between">
-                                    <div className="flex items-center mb-6">
-                                        <Link href="/">
-                                            <a >
-                                                <div className="text-gray-800 dark:text-gray-50 cursor-pointer hover:text-brand dark:hover:text-brand ">
-                                                    <svg className="footer-icon feather feather-github" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                <div className="dark:bg-gray-900 bg-white w-full lg:w-1/2 px-6 flex flex-col justify-between">
+                                    <div className="dark:bg-gray-900 bg-white flex items-center mb-6">
+                                        <div className="text-gray-800 dark:text-gray-50 cursor-pointer hover:text-brand dark:hover:text-brand ">
+                                            <Link href="/">
+                                                <a >
+                                                    <svg className="footer-icon text-gray-800 dark:text-gray-50 hover:text-gray-600 dark:hover:text-gray-400 feather feather-github" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                                     </svg>
-                                                </div>
-                                            </a>
-                                        </Link>
-                                        <Link href="/">
-                                            <a>
-                                                <div className="pl-4">
-                                                    <svg className="footer-icon feather feather-twitter text-gray-800 dark:text-gray-50 cursor-pointer hover:text-brand dark:hover:text-brand " xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                                </a>
+                                            </Link>
+                                        </div>
+                                        <div className="dark:bg-gray-900 bg-white pl-4">
+                                            <Link href="/">
+                                                <a>
+                                                    <svg className="footer-icon feather feather-twitter text-gray-800 dark:text-gray-50 hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                                         <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
                                                     </svg>
-                                                </div>
-                                            </a>
-                                        </Link>
+                                                </a>
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div className="relative w-36">
-                                        {mode == "auto" && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 icon icon-tabler icon-tabler-device-laptop" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <line x1={3} y1={19} x2={21} y2={19} />
-                                                <rect x={5} y={6} width={14} height={10} rx={1} />
-                                            </svg>
-                                        )}
-                                        {mode == "light" && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 icon icon-tabler icon-tabler-brightness-up" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <circle cx={12} cy={12} r={3} />
-                                                <line x1={12} y1={5} x2={12} y2={3} />
-                                                <line x1={17} y1={7} x2="18.4" y2="5.6" />
-                                                <line x1={19} y1={12} x2={21} y2={12} />
-                                                <line x1={17} y1={17} x2="18.4" y2="18.4" />
-                                                <line x1={12} y1={19} x2={12} y2={21} />
-                                                <line x1={7} y1={17} x2="5.6" y2="18.4" />
-                                                <line x1={6} y1={12} x2={4} y2={12} />
-                                                <line x1={7} y1={7} x2="5.6" y2="5.6" />
-                                            </svg>
-                                        )}
-                                        {mode == "dark" && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 icon icon-tabler icon-tabler-moon" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-                                            </svg>
-                                        )}
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="pointer-events-none absolute inset-0 m-auto mr-3 text-gray-700 dark:text-gray-50 icon icon-tabler icon-tabler-chevron-down" width={16} height={16} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <polyline points="6 9 12 15 18 9" />
-                                        </svg>
-
-                                        <select value={mode} onChange={(e) => setMode(e.target.value)} className="w-full focus:outline-none pl-10 py-2 appearance-none flex items-center h-12 border rounded border-gray-700 dark:border-gray-50 text-sm leading-5 dark:bg-gray-900 dark:text-gray-50">
-                                            <option value="auto">Auto</option>
-                                            <option value="light">Light</option>
-                                            <option value="dark">Dark</option>
-                                        </select>
+                                    <div className="dark:bg-gray-900 bg-white relative w-12 cursor-pointer">
+                                        <div className="bg-white dark:bg-gray-900 p-4 border border-solid rounded border-gray-400 dark:border-gray-100" onClick={handleTheme}>
+                                            {darkMode && (
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 hover:text-gray-600 dark:hover:text-gray-400  icon icon-tabler icon-tabler-brightness-up" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <circle cx={12} cy={12} r={3} />
+                                                    <line x1={12} y1={5} x2={12} y2={3} />
+                                                    <line x1={17} y1={7} x2="18.4" y2="5.6" />
+                                                    <line x1={19} y1={12} x2={21} y2={12} />
+                                                    <line x1={17} y1={17} x2="18.4" y2="18.4" />
+                                                    <line x1={12} y1={19} x2={12} y2={21} />
+                                                    <line x1={7} y1={17} x2="5.6" y2="18.4" />
+                                                    <line x1={6} y1={12} x2={4} y2={12} />
+                                                    <line x1={7} y1={7} x2="5.6" y2="5.6" />
+                                                </svg>
+                                            )}
+                                            {!darkMode && (
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 hover:text-gray-600 dark:hover:text-gray-400 icon icon-tabler icon-tabler-moon" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                                                </svg>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="py-16 flex flex-col justify-center items-center">
+                <div className="dark:bg-gray-900 bg-white py-16 flex flex-col justify-center items-center">
                     <Link href="/">
-                        <a className="text-black text-center text-lg uppercase font-extrabold tracking-wider">
+                        <a className="text-gray-900 dark:text-gray-200 text-center text-lg uppercase font-extrabold tracking-wider">
                             geofinmaps
                         </a>
                     </Link>
-                    <p className="mt-6 text-xs lg:text-sm leading-none text-gray-900 dark:text-gray-50">&copy; {new Date().getFullYear()} GeoFinMaps. All Rights Reserved.</p>
+                    <p className="mt-6 text-xs lg:text-sm leading-none text-gray-900 dark:text-gray-50">
+                        &copy; {new Date().getFullYear()} GeoFinMaps. All Rights Reserved.
+                    </p>
                 </div>
             </footer>
         </div>
     );
 };
+
 export default Footer;

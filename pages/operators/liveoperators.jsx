@@ -31,12 +31,12 @@ const LiveOperators = (props) => {
                 <meta name="description" content="The admin panel of the geofinmaps application for mtn ghana" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="">
-                <div className="mt-3 px-4">
+            <main className="bg-white dark:bg-gray-900">
+                <div className="mt-3 px-4 bg-white dark:bg-gray-900">
                     <h1 className="headings">Operators Online</h1>
                 </div>
-                <div className=" bg-white flex justify-evenly items-center">
-                    <div className="bg-white">
+                <div className=" bg-white dark:bg-gray-900 flex justify-evenly items-center">
+                    <div className="bg-white dark:bg-gray-900">
                         {
                             operators.map(item => {
                                 if (item.isOnline) {
