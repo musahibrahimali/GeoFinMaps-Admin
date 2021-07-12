@@ -7,3 +7,4 @@ export { default as GoogleMapView } from './GoogleMap/GoogleMapView';
 
 /* operator */
 export { default as OperatorCard } from './Operator/OperatorCard';
+export { default as StatisticsCard } from './StatisticsCard/StatisticsCard';

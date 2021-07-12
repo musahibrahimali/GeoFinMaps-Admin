@@ -4,8 +4,6 @@ const Header = (props) => {
 
     const { openDrawer, setOpenDrawer, handleOpenDrawer } = props;
 
-
-
     return (
         <header className="bg-white dark:bg-gray-900">
             <NavBar

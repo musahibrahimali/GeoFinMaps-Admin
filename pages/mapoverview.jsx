@@ -15,7 +15,7 @@ const MapOverview = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className="h-full w-full bg-white dark:bg-gray-900">
-
+                <GoogleMapView />
             </main>
         </>
     );

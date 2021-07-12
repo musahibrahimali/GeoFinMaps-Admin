@@ -15,6 +15,7 @@ export {
     MapWrapper,
     GoogleMapView,
     OperatorCard,
+    StatisticsCard,
 } from './widgets/widgets';
 
 /* footer */

@@ -54,15 +54,12 @@ const OperatorDetails = (props) => {
                         operator details
                     </h1>
                 </div>
-                <div className="bg-white dark:bg-gray-900 p-4 flex flex-col justify-between items-center">
+                <div className="bg-white dark:bg-gray-900 p-4 flex flex-col justify-center items-center">
                     {/* This is a demo profile card */}
-
                     <div>
                         <div className="md:grid grid-cols-4 grid-rows-2  bg-white dark:bg-gray-900 gap-2">
                             <div className="bg-white dark:bg-gray-900 md:col-span-1 h-48 shadow-md">
-                                <div
-                                    className="bg-white dark:bg-gray-900 flex w-full h-full relative justify-center object-cover"
-                                >
+                                <div className="bg-white dark:bg-gray-900 flex w-full h-full relative justify-center object-cover" >
                                     <Image
                                         loading='lazy'
                                         src={profileImage}
@@ -73,12 +70,8 @@ const OperatorDetails = (props) => {
                                     />
                                 </div>
                             </div>
-                            <div
-                                className="bg-white dark:bg-gray-900 md:col-span-3 h-48 shadow-md p-4"
-                            >
-                                <div
-                                    className="bg-white dark:bg-gray-900 border border-solid border-gray-400 dark:border-gray-600 flex m-2"
-                                >
+                            <div className="bg-white dark:bg-gray-900 md:col-span-3 h-48 shadow-md p-4">
+                                <div className="bg-white dark:bg-gray-900 border border-solid border-gray-400 dark:border-gray-600 flex m-2">
                                     <span
                                         className="profile__card__option whitespace-no-wrap">
                                         Name
@@ -90,12 +83,8 @@ const OperatorDetails = (props) => {
                                         readOnly
                                     />
                                 </div>
-                                <div
-                                    className="bg-white dark:bg-gray-900 flex m-2 border border-solid border-gray-400 dark:border-gray-600"
-                                >
-                                    <span
-                                        className="profile__card__option whitespace-no-wrap"
-                                    >
+                                <div className="bg-white dark:bg-gray-900 flex m-2 border border-solid border-gray-400 dark:border-gray-600">
+                                    <span className="profile__card__option whitespace-no-wrap">
                                         Email
                                     </span>
                                     <input
@@ -105,12 +94,8 @@ const OperatorDetails = (props) => {
                                         readOnly
                                     />
                                 </div>
-                                <div
-                                    className="bg-white dark:bg-gray-900 flex m-2 border border-solid border-gray-400 dark:border-gray-600"
-                                >
-                                    <span
-                                        className="profile__card__option whitespace-no-wrap"
-                                    >
+                                <div className="bg-white dark:bg-gray-900 flex m-2 border border-solid border-gray-400 dark:border-gray-600" >
+                                    <span className="profile__card__option whitespace-no-wrap">
                                         Role
                                     </span>
                                     <input
@@ -121,17 +106,11 @@ const OperatorDetails = (props) => {
                                     />
                                 </div>
                             </div>
-                            <div
-                                className="bg-white dark:bg-gray-900 md:col-span-4 shadow-md p-4 -mt-20 mb-4"
-                            >
-                                <h3
-                                    className="p-2 mt-4 mb-4 text-base text-center md:text-left md:text-lg lg:text-xl text-gray-800 dark:text-gray-300 uppercase font-extrabold tracking-wide md:tracking-wider lg:tracking-widest cursor-default"
-                                >
+                            <div className="bg-white dark:bg-gray-900 md:col-span-4 shadow-md p-4 -mt-20 mb-4">
+                                <h3 className="p-2 mt-4 mb-4 text-base text-center md:text-left md:text-lg lg:text-xl text-gray-800 dark:text-gray-300 uppercase font-extrabold tracking-wide md:tracking-wider lg:tracking-widest cursor-default" >
                                     Profile Description
                                 </h3>
-                                <p
-                                    className="text-gray-700 dark:text-gray-300 text-justify font-normal text-base md:text-lg lg:text-xl"
-                                >
+                                <p className="text-gray-700 dark:text-gray-300 text-justify font-normal text-base md:text-lg lg:text-xl">
                                     {operatorData.profile}
                                     {operatorData.profile}
                                     {operatorData.profile}
