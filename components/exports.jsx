@@ -1,5 +1,7 @@
 /* layout */
 export { default as Layout } from './layout/Layout';
+export { default as BarChart } from './Charts/BarChart';
+export { default as DoughnutChart } from './Charts/DoughnutChart';
 
 /* navigation */
 export {

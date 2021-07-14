@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-import { ReportCard, StatisticsCard } from '../components/exports';
+import { ReportCard, StatisticsCard, BarChart, DoughnutChart } from '../components/exports';
 import { Image7 } from '../assets/AssetExport';
 import ReportData from '../data/reportsData.json';
 import OperatorsData from '../data/operators.json';
@@ -26,17 +26,14 @@ export default function Home(props) {
   let danger = false;
   let warning = false;
   let normal = false;
-
   /* dash items colors  */
   let normalDash = false;
   let warningDash = false;
   let criticalDash = false;
   let notDash = true;
-
   let criticalReports = 0;
   let warningReports = 0;
   let normalReports = 0;
-
   let usersOnline = 0;
 
   const handleCounts = () => {
@@ -62,7 +59,6 @@ export default function Home(props) {
     });
 
   }
-
   handleCounts();
 
   return (
@@ -84,7 +80,7 @@ export default function Home(props) {
             <div className="mb-3">
               <h1 className="headings">Statistics</h1>
             </div>
-            <div className="grid md:grid-cols-3 gap-4 bg-white dark:bg-gray-900">
+            <div className="grid md:grid-cols-3 gap-2 bg-white dark:bg-gray-900">
               < StatisticsCard
                 notDash={notDash}
                 itemTitle={"Total Users"}
@@ -102,7 +98,7 @@ export default function Home(props) {
               />
             </div>
             <div className="mt-4">
-              <div className="grid md:grid-cols-3 gap-4 bg-white dark:bg-gray-900">
+              <div className="grid md:grid-cols-3 gap-2 bg-white dark:bg-gray-900">
                 < StatisticsCard
                   normalDash={normalDash}
                   itemTitle={"Normal Reports"}
@@ -118,6 +114,22 @@ export default function Home(props) {
                   itemTitle={"Critical Reports"}
                   itemCount={criticalReports}
                 />
+              </div>
+              <div className="mt-8 mx-4 grid md:grid-cols-2 grid-rows-1 gap-2">
+                <div className="bg-white dark:bg-gray-100 hidden md:block shadow-md p-6 border border-solid border-gray-200 dark:border-transparent rounded-lg cursor-pointer">
+                  <BarChart
+                    normalReports={normalReports}
+                    warningReports={warningReports}
+                    criticalReports={criticalReports}
+                  />
+                </div>
+                <div className="bg-white dark:bg-gray-100 hidden md:block shadow-md p-6 border border-solid border-gray-200 dark:border-transparent rounded-lg cursor-pointer">
+                  <DoughnutChart
+                    normalReports={normalReports}
+                    warningReports={warningReports}
+                    criticalReports={criticalReports}
+                  />
+                </div>
               </div>
             </div>
           </div>
