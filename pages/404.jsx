@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Head from 'next/head';
 import Link from 'next/link';
 import { NotFoundImage } from '../assets/AssetExport';
 
@@ -16,6 +17,15 @@ const NotFound = () => {
 
     return (
         <>
+            <Head>
+                <meta httpEquiv="X-UA-Compatible" content="IE=7" />
+                <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+                <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>GeofinMaps Admin | Page not found</title>
+                <meta name="description" content="The admin panel of the geofinmaps application for mtn ghana" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className="bg-white dark:bg-gray-900 overflow-hidden">
                 <div className="bg-white dark:bg-gray-900 grid grid-cols-6 gap-2 grid-rows-1 mb-5">
                     <div className="bg-white w-full dark:bg-gray-900 col-span-6 flex justify-center items-center mx-auto mt-4 px-4">

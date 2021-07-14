@@ -65,9 +65,7 @@ const Layout = (props) => {
     return (
         <div className={darkMode ? "dark" : ""}>
             <div className="bg-white dark:bg-gray-900">
-                <div
-                    className="h-full w-screen bg-white dark:bg-gray-900 header z-50 sticky top-0"
-                >
+                <div className="h-full w-screen bg-white dark:bg-gray-900 header z-50 sticky top-0">
                     <Header
                         openDrawer={openDrawer}
                         setOpenDrawer={setOpenDrawer}
@@ -75,7 +73,7 @@ const Layout = (props) => {
                     />
                 </div>
                 <div className="bg-white dark:bg-gray-900">
-                    <div className="max-w-screen-xl mx-auto flex flex-row overflow-auto">
+                    <div className="max-w-screen-xl mx-auto">
                         <div>
                             <SideBar
                                 openDrawer={openDrawer}
@@ -83,7 +81,7 @@ const Layout = (props) => {
                                 handleOpenDrawer={handleOpenDrawer}
                             />
                         </div>
-                        <div className="bg-white dark:bg-gray-900 flex flex-col">
+                        <div className="bg-white dark:bg-gray-900">
                             {children}
                         </div>
                     </div>

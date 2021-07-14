@@ -19,7 +19,7 @@ const NavBar = (props) => {
     const { handleOpenDrawer } = props;
 
     return (
-        <nav className="main__navbar navbar_t">
+        <nav className="main__navbar navbar_t px-2">
             <div className="flex flex-row items-center justify-between">
                 <div className="cursor-pointer">
                     <h1 className="brand__logo">

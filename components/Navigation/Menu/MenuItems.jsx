@@ -1,5 +1,9 @@
 export const MenuItems = [
     {
+        name: "home",
+        url: "/",
+    },
+    {
         name: "map",
         url: "/mapoverview",
     },

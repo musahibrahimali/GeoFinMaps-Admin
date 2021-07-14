@@ -16,6 +16,8 @@ export {
     GoogleMapView,
     OperatorCard,
     StatisticsCard,
+    RegisterForm,
+    LogInForm,
 } from './widgets/widgets';
 
 /* footer */
