@@ -3,7 +3,6 @@ import nookies from 'nookies';
 import firebase from 'firebase';
 import firebaseClient from '../config/firebaseClient';
 
-
 const StateContext = createContext({});
 
 export const StateProvider = ({ children }) => {

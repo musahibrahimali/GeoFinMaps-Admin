@@ -2,14 +2,15 @@ import firebase from 'firebase';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyB0wAbddyp2sZube4CMTcUFRlhUHa5mWc4",
-    authDomain: "geofinmaps.firebaseapp.com",
-    projectId: "geofinmaps",
-    storageBucket: "geofinmaps.appspot.com",
-    messagingSenderId: "658008734118",
-    appId: "1:658008734118:web:b181b72ba7b0ef7fd37767",
-    measurementId: "G-Y429QCWS83"
+    apiKey: "AIzaSyBjkxejcQmbZD_mKUPxJv-MoxktnGqJEw0",
+    authDomain: "geofinmaps-gh.firebaseapp.com",
+    projectId: "geofinmaps-gh",
+    storageBucket: "geofinmaps-gh.appspot.com",
+    messagingSenderId: "489470082081",
+    appId: "1:489470082081:web:3e6f3a489784b2ac5cb760",
+    measurementId: "G-16NLL3J06X"
 };
+
 
 const firebaseClient = () => {
     if (!firebase.apps.length) {
