@@ -1,15 +1,17 @@
 import Link from "next/link";
+import { useStateValue } from '../../provider/StateProvider';
 
 const Footer = (props) => {
 
-    const { darkMode, handleTheme } = props;
+    const { handleTheme } = props;
+
+    const [{ theme }] = useStateValue();
 
     return (
         <div className="pt-2 bg-white dark:bg-gray-900">
             <footer className="relative z-40 p-4 bg-white dark:bg-gray-900">
                 <div
-                    className="bg-white dark:bg-gray-900 border-t border-b border-gray-200 dark:border-gray-700 py-16"
-                >
+                    className="bg-white dark:bg-gray-900 border-t border-b border-gray-200 dark:border-gray-700 py-16">
                     <div className="dark:bg-gray-900 bg-white max-w-screen-lg mx-auto px-4 xl:px-12 2xl:px-4">
                         <div className="lg:flex dark:bg-gray-900 bg-white">
                             <div className="w-full lg:w-1/2 mb-16 lg:mb-0 flex dark:bg-gray-900 bg-white">
@@ -115,7 +117,7 @@ const Footer = (props) => {
                                     </div>
                                     <div className="dark:bg-gray-900 bg-white relative w-12 cursor-pointer">
                                         <div className="bg-white dark:bg-gray-900 p-4 border border-solid rounded border-gray-400 dark:border-gray-100" onClick={handleTheme}>
-                                            {darkMode && (
+                                            {theme && (
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 hover:text-gray-600 dark:hover:text-gray-400  icon icon-tabler icon-tabler-brightness-up" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <circle cx={12} cy={12} r={3} />
@@ -129,7 +131,7 @@ const Footer = (props) => {
                                                     <line x1={7} y1={7} x2="5.6" y2="5.6" />
                                                 </svg>
                                             )}
-                                            {!darkMode && (
+                                            {!theme && (
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 hover:text-gray-600 dark:hover:text-gray-400 icon icon-tabler icon-tabler-moon" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />

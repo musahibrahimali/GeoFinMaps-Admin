@@ -12,26 +12,6 @@ const LogLanding = () => {
         setRegister(!register);
     }
 
-    // decide on the authentication method to call
-    const handleAuth = () => {
-        if (register) {
-            handleSignUp();
-        } else {
-            handleSignIn();
-        }
-    }
-
-    // const handle sign in
-    const handleSignIn = () => {
-        console.log("Sign in");
-    }
-
-    // handle sign up
-    const handleSignUp = () => {
-
-        console.log("Sign Up");
-    }
-
     return (
         <>
             <Head>

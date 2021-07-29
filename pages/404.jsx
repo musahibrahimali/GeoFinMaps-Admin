@@ -36,8 +36,7 @@ const NotFound = () => {
                         />
                     </div>
                     <div
-                        className="bg-white dark:bg-gray-900 col-span-6 flex flex-col justify-center items-center my-4"
-                    >
+                        className="bg-white dark:bg-gray-900 col-span-6 flex flex-col justify-center items-center my-4">
                         <h1 className="text-blue-600 dark:text-blue-400 text-lg md:text-5xl lg:text-8xl py-2 font-normal italic">OOOPS!!!!</h1>
                         <div
                             className="bg-white dark:bg-gray-900 flex flex-col justify-between items-center"

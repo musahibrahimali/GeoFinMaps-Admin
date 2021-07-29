@@ -1,23 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { Grid } from '@material-ui/core';
-import * as employeeService from '../../../../Services/EmployeeService';
+import EmailIcon from '@material-ui/icons/Email';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import IconButton from '@material-ui/core/IconButton';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import { useStateValue } from '../../../../provider/StateProvider';
 import {
     UseForm,
     Form,
     InputField,
-    RadioControls,
-    DropDown,
-    CheckBox,
-    DatePicker,
     FormButton,
 } from '../../FormControls/controls';
 import { LogInFormStyles } from './LogInFormStyles';
-
-const genderItems = [
-    { id: "male", title: "Male" },
-    { id: "female", title: "Female" },
-    { id: "other", title: "Other" },
-];
 
 const initialValues = {
     id: 0,
@@ -27,6 +24,14 @@ const initialValues = {
 
 function LogInForm() {
     const styles = LogInFormStyles();
+    const [errorMessage, setErrorMessage] = useState("");
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    const [dispatch] = useStateValue();
+
+    const handlePasswordVisible = (event) => {
+        event.preventDefault();
+        setPasswordVisible(!passwordVisible);
+    }
 
     const validateForm = (fieldValues = values) => {
         let temp = { ...errors };
@@ -47,10 +52,45 @@ function LogInForm() {
         }
     }
 
+    const handleLogIn = async (event) => {
+        event.preventDefault();
+        await firebase.auth()
+            .signInWithEmailAndPassword(
+                values.emailAddress, values.password
+            )
+            .then((auth) => {
+                if (auth) {
+                    dispatch({
+                        type: "SET_USER",
+                        user: auth,
+                    });
+                }
+            })
+            .catch((error) => {
+                switch (error.code) {
+                    case "auth/invalid-email":
+                        setErrorMessage("Invalid Email");
+                        break;
+                    case "auth/user-disabled":
+                        setErrorMessage("Account has been disabled");
+                        break;
+                    case "auth/user-not-found":
+                        setErrorMessage("User not found");
+                        break;
+                    case "auth/wrong-password":
+                        setErrorMessage("Invalid password");
+                        break;
+                    default:
+                        setErrorMessage("A network error occured");
+                        break;
+                }
+            })
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (validateForm()) {
-            window.alert("working so far so good");
+            handleLogIn();
         }
     }
 
@@ -71,20 +111,34 @@ function LogInForm() {
                 <Grid container>
                     <Grid item xs={12} className="flex flex-col justify-center items-center w-96">
                         <InputField
+                            required
                             label="Email Address"
                             name="emailAddress"
                             type="email"
                             value={values.emailAddress}
                             onChange={handleInputChange}
                             error={errors.emailAddress}
+                            inputIcon={<EmailIcon />}
                         />
                         <InputField
+                            required
                             label="Password"
                             name="password"
-                            type="password"
+                            type={passwordVisible ? "text" : "password"}
                             value={values.password}
                             onChange={handleInputChange}
                             error={errors.password}
+                            inputIcon={<VpnKeyIcon />}
+                            endAdornment={
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        aria-label="toggle password visibility"
+                                        onMouseDown={handlePasswordVisible}
+                                    >
+                                        {passwordVisible ? <Visibility /> : <VisibilityOff />}
+                                    </IconButton>
+                                </InputAdornment>
+                            }
                         />
                         <div className={styles.mainContainer}>
                             <FormButton
@@ -101,6 +155,11 @@ function LogInForm() {
                         </div>
                     </Grid>
                 </Grid>
+                <div className="flex flex-row justify-center items-center">
+                    <p className="text-red-500 dark:text-red-700">
+                        {errorMessage}
+                    </p>
+                </div>
             </Form>
         </>
     )

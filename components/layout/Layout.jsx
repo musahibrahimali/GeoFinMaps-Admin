@@ -1,14 +1,27 @@
 import { useState, useEffect } from 'react';
 import { Header, Footer, SideBar } from '../exports';
+import { useStateValue } from '../../provider/StateProvider';
+import firebase from 'firebase';
 
 const Layout = (props) => {
     const { children } = props;
 
+    const [{ theme, user }, dispatch] = useStateValue();
+
     const [openDrawer, setOpenDrawer] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
 
     const handleTheme = () => {
-        setDarkMode(!darkMode);
+        if (theme) {
+            dispatch({
+                type: "SET_THEME",
+                theme: false,
+            });
+        } else {
+            dispatch({
+                type: "SET_THEME",
+                theme: true,
+            });
+        }
     }
 
     // open the side bar (drawer logic)
@@ -53,6 +66,23 @@ const Layout = (props) => {
 
     // on component mount (when it is rendered in the browser)
     useEffect(() => {
+        // listen for auth changes then set the user accordingly
+        firebase.auth().onAuthStateChanged((authUser) => {
+            if (authUser) {
+                // user found
+                dispatch({
+                    type: "SET_USER",
+                    user: authUser,
+                });
+            } else {
+                // no user
+                dispatch({
+                    type: "SET_USER",
+                    user: null,
+                });
+            }
+        });
+
         // hide sidebar on screen sizes larger than mobile devices
         window.addEventListener('resize', handleHideMenu);
 
@@ -62,8 +92,10 @@ const Layout = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    console.log("the user is >>> ", user);
+
     return (
-        <div className={darkMode ? "dark" : ""}>
+        <div className={theme ? "dark" : ""}>
             <div className="bg-white dark:bg-gray-900">
                 <div className="h-full w-screen bg-white dark:bg-gray-900 header z-50 sticky top-0">
                     <Header
@@ -87,8 +119,6 @@ const Layout = (props) => {
                     </div>
                 </div>
                 <Footer
-                    darkMode={darkMode}
-                    setDarkMode={setDarkMode}
                     handleTheme={handleTheme}
                 />
             </div>

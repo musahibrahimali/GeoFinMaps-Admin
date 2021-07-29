@@ -116,21 +116,17 @@ const ReportDetails = (props) => {
                                 >
                                     {reportData.author}
                                 </p>
-                                <p
-                                    className="text-left mr-2 text-gray-500 dark:text-gray-300 font-bold uppercase tracking-tighter mt-2"
-                                >
+                                <p className="text-left mr-2 text-gray-500 dark:text-gray-300 font-bold uppercase tracking-tighter mt-2">
                                     {" - "} report level {" - "}
                                 </p>
-                                <p
-                                    className={
-                                        threatLevel ?
-                                            "text-left text-red-600 font-bold uppercase tracking-tighter mt-2"
-                                            : "text-left text-blue-400 dark:text-green-500 font-bold uppercase tracking-tighter mt-2"
-                                                | warning ? "text-left text-yellow-600 font-bold uppercase tracking-tighter mt-2"
-                                                : "text-left text-blue-400 font-bold uppercase tracking-tighter mt-2"
-                                                    | normalLevel ? "text-left text-green-600 font-bold uppercase tracking-tighter mt-2" : "text-left text-blue-400 font-bold uppercase tracking-tighter mt-2"
-                                    }
-                                >
+                                <p className={
+                                    threatLevel ?
+                                        "text-left text-red-600 font-bold uppercase tracking-tighter mt-2"
+                                        : "text-left text-blue-400 dark:text-green-500 font-bold uppercase tracking-tighter mt-2"
+                                            | warningLevel ? "text-left text-yellow-600 font-bold uppercase tracking-tighter mt-2"
+                                            : "text-left text-blue-400 font-bold uppercase tracking-tighter mt-2"
+                                                | normalLevel ? "text-left text-green-600 font-bold uppercase tracking-tighter mt-2" : "text-left text-blue-400 font-bold uppercase tracking-tighter mt-2"
+                                }>
                                     {
                                         threatLevel ?
                                             "Threat" : ""

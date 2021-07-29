@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GoogleMap } from 'react-google-maps';
+import { GoogleMap, Marker } from 'react-google-maps';
 
 const initialPosition = { lat: 6.673175, lng: -1.565423 };
 
@@ -31,11 +31,11 @@ const Map = () => {
             defaultCenter={position}
             defaultOptions={{
                 mapTypeControlOptions: {
-                    mapTypeIds: ['moon', 'satellite']
+                    mapTypeIds: ['satellite', 'terrain']
                 },
             }}
         >
-
+            <Marker position={position} />
         </GoogleMap>
     );
 }

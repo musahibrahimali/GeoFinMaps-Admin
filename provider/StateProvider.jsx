@@ -1,33 +1,17 @@
-import { useState, useEffect, createContext, useContext } from 'react';
-import nookies from 'nookies';
-import firebase from 'firebase';
+/* Creating the data layer */
+import React, { createContext, useContext, useReducer } from 'react';
 import firebaseClient from '../config/firebaseClient';
 
-const StateContext = createContext({});
+export const StateContext = createContext();
 
-export const StateProvider = ({ children }) => {
+/* build a provider */
+export const StateProvider = ({ reducer, initialState, children }) => {
     firebaseClient();
-    const [currentUser, setCurrentUser] = useState(null);
-
-    useEffect(() => {
-        return firebase.auth().onIdTokenChanged(async (authUser) => {
-            if (!authUser) {
-                setCurrentUser(null);
-                nookies.set(undefined, "token", "", {});
-                return;
-            }
-            const token = await authUser.getIdToken();
-            setCurrentUser(authUser);
-            nookies.set(undefined, "token", token, {});
-        });
-    }, []);
-
     return (
-        <StateContext.Provider value={currentUser}>
+        <StateContext.Provider value={useReducer(reducer, initialState)}>
             {children}
         </StateContext.Provider>
-    );
+    )
 };
 
-export const useAuth = () => useContext(StateContext);
-
+export const useStateValue = () => useContext(StateContext);

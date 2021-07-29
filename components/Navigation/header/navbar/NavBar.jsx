@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import Link from 'next/link';
 import { MenuIcon } from "@heroicons/react/outline";
+import Avatar from '@material-ui/core/Avatar';
 import { DropDown } from '../../navigation';
+import { useStateValue } from '../../../../provider/StateProvider';
 
 const NavBar = (props) => {
     const [mouseEnter, setMouseEnter] = useState(false);
@@ -16,7 +18,17 @@ const NavBar = (props) => {
         setMouseEnter(false);
     }
 
+    const signOutUSer = () => {
+        firebase.auth().signOut();
+        dispatch({
+            type: "SET_USER",
+            user: null,
+        });
+    }
+
     const { handleOpenDrawer } = props;
+
+    const [{ user }] = useStateValue();
 
     return (
         <nav className="main__navbar navbar_t px-2">
@@ -38,12 +50,12 @@ const NavBar = (props) => {
                     >
                         <Link href="#" >
                             <a>
-                                options
-                                <div className="absolute -left-full mx-auto mt-4 mr-4">
+                                <span className="font-bold text-lg md:text-xl">options</span>
+                                <p className="absolute -left-full mx-auto mt-4 mr-4">
                                     {
                                         mouseEnter && <DropDown />
                                     }
-                                </div>
+                                </p>
                             </a>
                         </Link>
                     </li>
@@ -54,13 +66,20 @@ const NavBar = (props) => {
                             </a>
                         </Link>
                     </li>
-                    <li className="navbar__item">
-                        <Link href="/loglanding">
-                            <a>
-                                Log In
-                            </a>
-                        </Link>
-                    </li>
+                    {
+                        user ?
+                            <div className="bg-white dark:bg-gray-900 px-4 cursor-pointer" onMouseDown={signOutUSer}>
+                                <Avatar alt="profile image" />
+                            </div> :
+                            <li className="navbar__item">
+                                <Link href="/loglanding">
+                                    <a>
+                                        Log In
+                                    </a>
+                                </Link>
+                            </li>
+                    }
+
                 </ul>
             </div>
             <div className="flex flex-end md:hidden">
