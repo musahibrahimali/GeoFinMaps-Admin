@@ -12,6 +12,10 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import * as employeeService from '../../../../Services/EmployeeService';
+import { useStateValue } from '../../../../provider/StateProvider';
+import firebase from 'firebase';
+import 'firebase/auth';
+import 'firebase/database';
 
 import {
     UseForm,
@@ -51,6 +55,7 @@ function SignUpForm() {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
+    const [dispatch] = useStateValue();
     const router = useRouter();
 
     const handlePasswordVisible = (event) => {
@@ -66,17 +71,17 @@ function SignUpForm() {
     const handleSignUP = async (event) => {
         event.preventDefault();
         let userDepartment = "";
-        if (departmentId === "1") {
-            department = "Development"
+        if (values.departmentId === "1") {
+            userDepartment = "Development"
         }
-        if (departmentId === "2") {
-            department = "Marketting"
+        if (values.departmentId === "2") {
+            userDepartment = "Marketing"
         }
-        if (departmentId === "3") {
-            department = "Accounting"
+        if (values.departmentId === "3") {
+            userDepartment = "Accounting"
         }
-        if (departmentId === "4") {
-            department = "Human Resource"
+        if (values.departmentId === "4") {
+            userDepartment = "Human Resource"
         }
 
         await firebase.auth()
@@ -85,7 +90,7 @@ function SignUpForm() {
             )
             .then((auth) => {
                 if (auth) {
-                    database.collection('admins').add({
+                    firebase.firestore().collection('admins').add({
                         userName: values.fullName,
                         userEmail: values.emailAddress,
                         phone: values.phoneNumber,

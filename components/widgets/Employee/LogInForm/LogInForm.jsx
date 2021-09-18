@@ -28,6 +28,8 @@ function LogInForm() {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [dispatch] = useStateValue();
 
+    const router = useRouter();
+
     const handlePasswordVisible = (event) => {
         event.preventDefault();
         setPasswordVisible(!passwordVisible);
@@ -64,6 +66,7 @@ function LogInForm() {
                         type: "SET_USER",
                         user: auth,
                     });
+                    router.replace('/');
                 }
             })
             .catch((error) => {

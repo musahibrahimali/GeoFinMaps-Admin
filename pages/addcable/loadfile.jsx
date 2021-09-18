@@ -1,8 +1,35 @@
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { UploadImage } from '../../assets/AssetExport';
+import firebase from 'firebase';
+import 'firebase/database';
 
 const LoadDataFile = () => {
+    const [file, setFile] = useState();
+
+    const handleOnChange = (event) => {
+        let selectedFile = event.target.files[0];
+        if (selectedFile.type == 'application/json') {
+            setFile(selectedFile);
+        } else {
+            alert("The selected file is not supported");
+        }
+        console.log(file);
+        console.log(file.name);
+    }
+
+    const handleOnSubmit = (event) => {
+        event.preventDefault();
+        if (file.endsWith('.json')) {
+            let fileContent = file;
+            fileContent.map((item) => {
+                firebase.firestore().collection('layings').add(item);
+            });
+        } else {
+            alert("The selected file is not supported on this platform");
+        }
+    }
 
     return (
         <>
@@ -27,7 +54,7 @@ const LoadDataFile = () => {
                                 select a JSON file type conataining data for upload
                             </p>
                         </div>
-                        <form className="mt-8 space-y-3" action="#" method="POST">
+                        <form className="mt-8 space-y-3" onSubmit={handleOnSubmit}>
                             <div className="grid grid-cols-1 space-y-2">
                                 <label className="text-lg uppercase font-bold text-gray-700 dark:text-gray-300 tracking-wide">
                                     Load JSON File
@@ -50,13 +77,16 @@ const LoadDataFile = () => {
                                                 from your computer
                                             </p>
                                         </div>
-                                        <input type="file" className="hidden" />
+                                        <input type="file" name="file" onChange={handleOnChange} />
                                     </label>
                                 </div>
                             </div>
-                            <p className="text-sm text-gray-500 dark:text-gray-300">
-                                <span>File type : json (example {"sample.json"})</span>
-                            </p>
+                            <div className="flex flex-row justify-between items-center">
+                                <p className="text-sm text-gray-500 dark:text-gray-300">
+                                    <span>File type : json (example {"sample.json"})</span>
+                                </p>
+                                <p className="text-sm text-gray-500 dark:text-gray-300">Selected File: {file ? file.name : "No file"}</p>
+                            </div>
                             <div>
                                 <button type="submit"
                                     className="my-5 w-full border md:border border-gray-200 flex justify-center bg-gray-900 border-opacity-0 hover:border-opacity-0 dark:bg-gray-100 dark:text-gray-900 text-gray-100 p-4  rounded-full tracking-wide font-bold  focus:outline-none focus:shadow-outline hover:bg-gray-700 hover:text-gray-200 dark:hover:bg-transparent dark:hover:border-gray-400 dark:hover:text-gray-300 shadow-md cursor-pointer transition ease-in duration-300 uppercase text-base md:text:lg lg:text-xl"
